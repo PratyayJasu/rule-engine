@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: domain-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 9000
+valuesList: one,two,three
+entries:
+  rulesMap:
+    -
+      condition: amount < pilLimit*.2 && amount > flexLimit*.1
+      nextpage: recommendation
+      primary: pil
+      secondary: flex
+    -
+      condition: amount > pilLimit*.2
+      nextpage: q3
